@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Signup.css";
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Signup() {
   const [name, setName] = useState();
@@ -10,10 +11,13 @@ function Signup() {
   const [message, setMessage] = useState();
 
   const Submit = (e) => {
-    e.preventDefaults();
-
+    e.preventDefault();
     axios
-      .post("http://localhost/auth/register", { name, email, password })
+      .post("http://localhost:8000/auth/register", {
+        name,
+        email,
+        password,
+      })
       .then((result) => {
         console.log(result);
       })
@@ -24,7 +28,11 @@ function Signup() {
 
   return (
     <>
-      <button className="login-btn">Login</button>
+      <Link to="/auth/login">
+        {" "}
+        <button className="login-btn">Login</button>{" "}
+      </Link>
+
       <form className="createUser" onSubmit={Submit}>
         <h1>Add New User</h1>
         <div className="user-info">
