@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CreateRecipe.css";
+import axios from "axios";
 
 function CreateRecipe() {
   const [recipe, setRecipe] = useState({
@@ -17,9 +18,27 @@ function CreateRecipe() {
     console.log(recipe);
   };
 
+  const Submit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("http://localhost:8000/recipes/create-recipes", recipe)
+      .then((result) => {
+        console.log(result);
+        if (result.data.message === "successful")
+          alert("Recipe added successful");
+        else {
+          alert("Could not add recipe");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="user-wrapper">
-      <form className="createUser">
+      <form className="createUser" onSubmit={Submit}>
         <h1>Create Recipe</h1>
         <div className="form-wrapper">
           <div className="user-info">
@@ -35,7 +54,7 @@ function CreateRecipe() {
           <div className="user-info">
             <label htmlFor="">Description</label>
             <input
-              type="email"
+              type="text"
               placeholder="Enter your email"
               required
               name="description"
@@ -45,7 +64,7 @@ function CreateRecipe() {
           <div className="user-info">
             <label htmlFor="">Ingredients</label>
             <input
-              type="password"
+              type="text"
               placeholder="Enter password"
               required
               name="ingredients"
@@ -56,7 +75,7 @@ function CreateRecipe() {
           <div className="user-info">
             <label htmlFor="">Image</label>
             <input
-              type="password"
+              type="text"
               placeholder="Enter Image URL"
               required
               name="image"

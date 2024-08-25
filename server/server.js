@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const express = require("express");
 const userRouter = require("./auth/auth");
+const recipeRouter = require("./auth/recipe");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
@@ -19,6 +20,7 @@ app.use(
 app.use(cookieParser());
 app.use(express.json());
 app.use("/auth", userRouter);
+app.use("/recipes", recipeRouter);
 
 mongoose
   .connect(uri)
