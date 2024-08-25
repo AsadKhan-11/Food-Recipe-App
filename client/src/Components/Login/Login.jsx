@@ -20,6 +20,8 @@ function Login() {
         }
         if (result.data === "Wrong password entered") {
           setMessage("Wrong password entered");
+        } else {
+          window.localStorage.setItem("id", result.data.id);
         }
       })
       .catch((err) => {
