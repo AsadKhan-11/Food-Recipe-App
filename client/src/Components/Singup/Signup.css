@@ -1,7 +1,8 @@
-.login-btn {
-  position: absolute;
-  top: 2%;
-  right: 2%;
+.user-wrapper {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
 }
 
 .createUser {
@@ -12,7 +13,7 @@
   width: 250px;
   border-radius: 12px;
   padding: 20px 30px;
-  margin: 10px 70px;
+  margin: 100px 70px 10px;
   background-color: #f4f4f4;
   gap: 20px;
 }

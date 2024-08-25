@@ -28,10 +28,7 @@ function Login() {
     setTimeout(() => setMessage(""), 3000);
   };
   return (
-    <>
-      <Link to="/auth/register">
-        <button className="login-btn">Signup</button>
-      </Link>
+    <div className="user-wrapper">
       <form className="createUser" onSubmit={Submit}>
         <h1>Login account</h1>{" "}
         <div className="user-info">
@@ -55,7 +52,7 @@ function Login() {
         <button type="submit">Add User</button>
         {message && <p style={{ color: "red" }}> {message} </p>}
       </form>
-    </>
+    </div>
   );
 }
 

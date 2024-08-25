@@ -35,12 +35,7 @@ function Signup() {
   };
 
   return (
-    <>
-      <Link to="/auth/login">
-        {" "}
-        <button className="login-btn">Login</button>{" "}
-      </Link>
-
+    <div className="user-wrapper">
       <form className="createUser" onSubmit={Submit}>
         <h1>Add New User</h1>
         <div className="form-wrapper">
@@ -79,7 +74,7 @@ function Signup() {
           </p>
         )}
       </form>
-    </>
+    </div>
   );
 }
 
