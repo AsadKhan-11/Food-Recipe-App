@@ -2,6 +2,8 @@ body {
   display: flex;
 
   justify-content: center;
-  background: linear-gradient(270deg, rgb(88, 255, 66), rgb(216, 230, 15));
+  /* background: linear-gradient(270deg, rgb(88, 255, 66), rgb(216, 230, 15)); */
+  background-image: url("./assets/Home.jpg");
+  background-size: cover;
   height: 90vh;
 }

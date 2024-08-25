@@ -6,7 +6,7 @@ function Nav() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="links-head">
-          <Link to="/" className="link">
+          <Link to="/recipes/recipe" className="link">
             <h3 className="nav-links">Food Recipe</h3>
           </Link>
 

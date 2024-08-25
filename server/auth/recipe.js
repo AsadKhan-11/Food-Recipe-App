@@ -20,4 +20,15 @@ router.post("/create-recipes", async (req, res) => {
     });
 });
 
+router.get("/recipe", (req, res) => {
+  recipeModel
+    .find()
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
 module.exports = router;

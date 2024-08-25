@@ -33,25 +33,27 @@ function Login() {
     <div className="user-wrapper">
       <form className="createUser" onSubmit={Submit}>
         <h1>Login account</h1>{" "}
-        <div className="user-info">
-          <label htmlFor="">Email</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />
+        <div className="form-wrapper">
+          <div className="user-info">
+            <label htmlFor="">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="user-info">
+            <label htmlFor="">Password</label>
+            <input
+              type="password"
+              placeholder="Enter password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit">Add User</button>
         </div>
-        <div className="user-info">
-          <label htmlFor="">Password</label>
-          <input
-            type="password"
-            placeholder="Enter password"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Add User</button>
         {message && <p style={{ color: "red" }}> {message} </p>}
       </form>
     </div>
